@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyoQuest
 {
-	class Program
+	public class MyoQuest
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Hello World");
-			Console.ReadKey();
 		}
 	}
 }
