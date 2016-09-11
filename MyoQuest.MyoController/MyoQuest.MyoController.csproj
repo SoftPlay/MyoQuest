@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FEC80B99-6613-43CE-956D-BA13C09FEFDD}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{C3004C21-326F-4DAC-B8D4-BB768D446F84}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyoQuest</RootNamespace>
-    <AssemblyName>MyoQuest</AssemblyName>
+    <RootNamespace>MyoQuest.MyoController</RootNamespace>
+    <AssemblyName>MyoQuest.MyoController</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,15 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KeyboardController\KeyboardController.cs" />
-    <Compile Include="MyoQuest.cs" />
+    <Compile Include="MyoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stories\IActionResult.cs" />
-    <Compile Include="Stories\IStory.cs" />
-    <Compile Include="Stories\StoryAction.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyoQuest.Common\MyoQuest.Common.csproj">

@@ -1,5 +1,10 @@
-﻿namespace MyoQuest.Stories
+﻿using MyoQuest.Common.Enums;
+
+namespace MyoQuest.Stories
 {
+	/// <summary>
+	/// Essentially represents the <see cref="ControllerState"/> but is contextual to the game world.
+	/// </summary>
 	public enum StoryAction
 	{
 		NoAction = 0,
