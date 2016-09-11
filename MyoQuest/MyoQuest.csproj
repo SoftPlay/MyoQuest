@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="MyoQuest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stories\IActionResult.cs" />
+    <Compile Include="Stories\IStory.cs" />
+    <Compile Include="Stories\StoryAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
