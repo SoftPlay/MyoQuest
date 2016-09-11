@@ -9,32 +9,56 @@ namespace MyoQuest.MyoController
 	{
 		public IChannel CreateChannel(IChannelDriver driver)
 		{
-			throw new NotImplementedException();
+			if (driver == null)
+			{
+				throw new ArgumentNullException("driver");
+			}
+
+			return Channel.Create(driver);
 		}
 
 		public IChannelBridge CreateChannelBridge()
 		{
-			throw new NotImplementedException();
+			return ChannelBridge.Create();
 		}
 
 		public IChannelDriver CreateChannelDriver(IChannelBridge bridge, IMyoErrorHandlerDriver errorHandlerDriver)
 		{
-			throw new NotImplementedException();
+			if (bridge == null)
+			{
+				throw new ArgumentNullException("bridge");
+			}
+			else if (errorHandlerDriver == null)
+			{
+				throw new ArgumentNullException("errorHandlerDriver");
+			}
+
+			return ChannelDriver.Create(bridge, errorHandlerDriver);
 		}
 
 		public IHub CreateHub(IChannel channel)
 		{
-			throw new NotImplementedException();
+			if (channel == null)
+			{
+				throw new ArgumentNullException("channel");
+			}
+
+			return Hub.Create(channel);
 		}
 
 		public IMyoErrorHandlerBridge CreateMyoErrorHandlerBridge()
 		{
-			throw new NotImplementedException();
+			return MyoErrorHandlerBridge.Create();
 		}
 
 		public IMyoErrorHandlerDriver CreateMyoErrorHandlerDriver(IMyoErrorHandlerBridge bridge)
 		{
-			throw new NotImplementedException();
+			if (bridge == null)
+			{
+				throw new ArgumentNullException("bridge");
+			}
+
+			return MyoErrorHandlerDriver.Create(bridge);
 		}
 	}
 }

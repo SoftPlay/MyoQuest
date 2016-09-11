@@ -27,34 +27,10 @@ namespace MyoQuest.MyoController
 
 		public void Initialise()
 		{
-			this.errorHandlerBridge = MyoErrorHandlerBridge.Create();
-			this.errorHandlerDriver = MyoErrorHandlerDriver.Create(this.errorHandlerBridge);
+			this.CreateMyoObjects();
 
-			this.bridge = ChannelBridge.Create();
-			this.driver = ChannelDriver.Create(this.bridge, this.errorHandlerDriver);
-			this.channel = Channel.Create(this.driver);
-
-			this.hub = Hub.Create(this.channel);
-
-			hub.MyoConnected += (sender, e) =>
-			{
-				if (this.activeMyo == null)
-				{
-					Console.WriteLine("Myo {0} has connected!", e.Myo.Handle);
-					e.Myo.Vibrate(VibrationType.Short);
-					e.Myo.Unlock(UnlockType.Hold);
-
-					this.activeMyo = e.Myo;
-				}
-			};
-
-			hub.MyoDisconnected += (sender, e) =>
-			{
-				if (e.Myo.Handle == this.activeMyo.Handle)
-				{
-					this.activeMyo = null;
-				}
-			};
+			hub.MyoConnected += this.Hub_MyoConnected;
+			hub.MyoDisconnected += this.Hub_MyoDisconnected;
 
 			this.channel.StartListening();
 		}
@@ -82,6 +58,36 @@ namespace MyoQuest.MyoController
 				}
 
 				hasDisposed = true;
+			}
+		}
+
+		private void CreateMyoObjects()
+		{
+			this.errorHandlerBridge = this.myoObjectFactory.CreateMyoErrorHandlerBridge();
+			this.errorHandlerDriver = this.myoObjectFactory.CreateMyoErrorHandlerDriver(this.errorHandlerBridge);
+			this.bridge = this.myoObjectFactory.CreateChannelBridge();
+			this.driver = this.myoObjectFactory.CreateChannelDriver(this.bridge, this.errorHandlerDriver);
+			this.channel = this.myoObjectFactory.CreateChannel(this.driver);
+			this.hub = this.myoObjectFactory.CreateHub(this.channel);
+		}
+
+		private void Hub_MyoConnected(object sender, MyoEventArgs e)
+		{
+			if (this.activeMyo == null)
+			{
+				Console.WriteLine("Myo {0} has connected!", e.Myo.Handle);
+				e.Myo.Vibrate(VibrationType.Short);
+				e.Myo.Unlock(UnlockType.Hold);
+
+				this.activeMyo = e.Myo;
+			}
+		}
+
+		private void Hub_MyoDisconnected(object sender, MyoEventArgs e)
+		{
+			if (e.Myo.Handle == this.activeMyo.Handle)
+			{
+				this.activeMyo = null;
 			}
 		}
 	}
