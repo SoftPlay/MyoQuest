@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMyoDal.cs" />
+    <Compile Include="IMyoObjectFactory.cs" />
     <Compile Include="MyoControl.cs" />
     <Compile Include="MyoDal.cs" />
+    <Compile Include="MyoObjectFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

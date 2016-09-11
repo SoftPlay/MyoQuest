@@ -7,6 +7,8 @@ namespace MyoQuest.MyoController
 {
 	public sealed class MyoDal : IMyoDal
 	{
+		private readonly IMyoObjectFactory myoObjectFactory;
+
 		private IChannel channel;
 		private IChannelDriver driver;
 		private IChannelBridge bridge;
@@ -17,6 +19,11 @@ namespace MyoQuest.MyoController
 		private IMyo activeMyo;
 
 		private bool hasDisposed = false;
+
+		public MyoDal(IMyoObjectFactory objectFactory)
+		{
+			this.myoObjectFactory = objectFactory;
+		}
 
 		public void Initialise()
 		{
