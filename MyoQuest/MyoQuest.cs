@@ -2,7 +2,7 @@
 
 namespace MyoQuest
 {
-	public class MyoQuest
+	public sealed class MyoQuest
 	{
 		static void Main(string[] args)
 		{

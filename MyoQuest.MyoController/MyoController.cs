@@ -4,7 +4,7 @@ using MyoQuest.Common.Enums;
 
 namespace MyoQuest.MyoController
 {
-	public class MyoController : IGameController
+	public sealed class MyoController : IGameController
 	{
 		public ControllerState CurrentState
 		{
