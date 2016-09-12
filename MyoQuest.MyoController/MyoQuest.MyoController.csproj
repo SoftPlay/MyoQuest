@@ -48,6 +48,7 @@
     <Compile Include="MyoControl.cs" />
     <Compile Include="MyoDal.cs" />
     <Compile Include="MyoObjectFactory.cs" />
+    <Compile Include="NewPoseEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

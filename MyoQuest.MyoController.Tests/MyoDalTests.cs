@@ -4,6 +4,8 @@ using Moq;
 using MyoSharp.Communication;
 using MyoSharp.Device;
 using MyoSharp.Exceptions;
+using MyoSharp.Poses;
+using Shouldly;
 
 namespace MyoQuest.MyoController.Tests
 {
@@ -176,6 +178,65 @@ namespace MyoQuest.MyoController.Tests
 			// Assert
 			mockSecondMyo.Verify(x => x.Vibrate(It.IsAny<VibrationType>()), Times.Once);
 			mockSecondMyo.Verify(x => x.Unlock(It.IsAny<UnlockType>()), Times.Once);
+		}
+
+		[TestMethod]
+		public void PoseChanged_WhenSubscribedMyoRaisesPoseChanged_AlsoRaisesWithPoseData()
+		{
+			// Arrange
+			var sut = this.CreateSut();
+			sut.Initialise();
+
+			var eventRaised = false;
+			Pose? returnedPose = null;
+			sut.PoseChanged += (s, e) =>
+			{
+				eventRaised = true;
+				returnedPose = e.Pose;
+			};
+
+			var mockMyo = new Mock<IMyo>();
+			this.mockHub.Raise(x => x.MyoConnected += null, new MyoEventArgs(mockMyo.Object, DateTime.MinValue));
+
+			// Act
+			Pose raisedPose = Pose.WaveIn;
+			mockMyo.Raise(x => x.PoseChanged += null, new PoseEventArgs(mockMyo.Object, DateTime.MinValue, raisedPose));
+
+			// Assert
+			eventRaised.ShouldBe(true);
+			returnedPose.ShouldBe(raisedPose);
+
+			GC.KeepAlive(sut);
+		}
+
+		/// <summary>
+		/// A disconnected Myo should never raise this (because wtf) BUT it proves we unhook the event handler
+		/// </summary>
+		[TestMethod]
+		public void PoseChanged_WhenDisconnectedMyoRaisesPoseChanged_DoesNotRaise()
+		{
+
+			// Arrange
+			var sut = this.CreateSut();
+			sut.Initialise();
+
+			bool eventRaised = false;
+			sut.PoseChanged += (s, e) =>
+			{
+				eventRaised = true;
+			};
+
+			var mockMyo = new Mock<IMyo>();
+			this.mockHub.Raise(x => x.MyoConnected += null, new MyoEventArgs(mockMyo.Object, DateTime.MinValue));
+
+			// Act
+			mockHub.Raise(x => x.MyoDisconnected += null, new MyoEventArgs(mockMyo.Object, DateTime.MinValue));
+			mockMyo.Raise(x => x.PoseChanged += null, new PoseEventArgs(mockMyo.Object, DateTime.MinValue, Pose.DoubleTap));
+
+			// Assert
+			eventRaised.ShouldBe(false);
+
+			GC.KeepAlive(sut);
 		}
 
 		private MyoDal CreateSut()

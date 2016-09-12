@@ -25,6 +25,8 @@ namespace MyoQuest.MyoController
 			this.myoObjectFactory = objectFactory;
 		}
 
+		public event EventHandler<NewPoseEventArgs> PoseChanged;
+
 		public void Initialise()
 		{
 			this.CreateMyoObjects();
@@ -75,11 +77,13 @@ namespace MyoQuest.MyoController
 		{
 			if (this.activeMyo == null)
 			{
-				Console.WriteLine("Myo {0} has connected!", e.Myo.Handle);
-				e.Myo.Vibrate(VibrationType.Short);
-				e.Myo.Unlock(UnlockType.Hold);
-
 				this.activeMyo = e.Myo;
+
+				Console.WriteLine("Myo {0} has connected!", this.activeMyo.Handle);
+				this.activeMyo.Vibrate(VibrationType.Short);
+				this.activeMyo.Unlock(UnlockType.Hold);
+
+				this.activeMyo.PoseChanged += this.ActiveMyo_PoseChanged;
 			}
 		}
 
@@ -87,8 +91,14 @@ namespace MyoQuest.MyoController
 		{
 			if (e.Myo.Handle == this.activeMyo.Handle)
 			{
+				this.activeMyo.PoseChanged -= this.ActiveMyo_PoseChanged;
 				this.activeMyo = null;
 			}
+		}
+
+		private void ActiveMyo_PoseChanged(object sender, PoseEventArgs e)
+		{
+			this.PoseChanged?.Invoke(sender, new NewPoseEventArgs(e.Pose));
 		}
 	}
 }
