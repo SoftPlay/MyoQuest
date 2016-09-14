@@ -6,12 +6,24 @@ namespace MyoQuest.MyoController
 {
 	public sealed class MyoControl : IGameController
 	{
-		public ControllerState CurrentState
+		private readonly IMyoDal dal;
+		private readonly IPoseToControllerStateConverter poseConverter;
+
+		public MyoControl(
+			IMyoDal myoDal,
+			IPoseToControllerStateConverter poseConverter)
 		{
-			get
-			{
-				throw new NotImplementedException();
-			}
+			this.dal = myoDal;
+			this.poseConverter = poseConverter;
+
+			this.dal.PoseChanged += this.Dal_PoseChanged;
+		}
+
+		public ControllerState CurrentState { get; private set; }
+
+		private void Dal_PoseChanged(object sender, NewPoseEventArgs e)
+		{
+			this.CurrentState = this.poseConverter.ConvertFrom(e.Pose);
 		}
 	}
 }

@@ -69,8 +69,14 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyoDalTests.cs" />
+    <Compile Include="MyoControlTests.cs" />
+    <Compile Include="StaticPoseToControllerStateConverterTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyoQuest.Common\MyoQuest.Common.csproj">
+      <Project>{E25AD7ED-32A0-44FB-A091-DB41F63A2505}</Project>
+      <Name>MyoQuest.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyoQuest.MyoController\MyoQuest.MyoController.csproj">
       <Project>{C3004C21-326F-4DAC-B8D4-BB768D446F84}</Project>
       <Name>MyoQuest.MyoController</Name>
