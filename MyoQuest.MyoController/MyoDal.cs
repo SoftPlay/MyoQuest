@@ -16,6 +16,9 @@ namespace MyoQuest.MyoController
 		private IMyoErrorHandlerDriver errorHandlerDriver;
 		private IHub hub;
 
+		/// <summary>
+		/// Note: This class only ever handles a single Myo device. No intent to make this flexible for this project.
+		/// </summary>
 		private IMyo activeMyo;
 
 		private bool hasDisposed = false;
