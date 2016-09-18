@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FEC80B99-6613-43CE-956D-BA13C09FEFDD}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyoQuest</RootNamespace>
-    <AssemblyName>MyoQuest</AssemblyName>
+    <RootNamespace>MyoQuest.Game</RootNamespace>
+    <AssemblyName>MyoQuest.Game</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,20 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyoQuest.cs" />
+    <Compile Include="KeyboardController\KeyboardControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="Stories\IActionResult.cs" />
+    <Compile Include="Stories\IStory.cs" />
+    <Compile Include="Stories\StoryAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyoQuest.Common\MyoQuest.Common.csproj">
       <Project>{E25AD7ED-32A0-44FB-A091-DB41F63A2505}</Project>
       <Name>MyoQuest.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyoQuest.MyoController\MyoQuest.MyoController.csproj">
-      <Project>{C3004C21-326F-4DAC-B8D4-BB768D446F84}</Project>
-      <Name>MyoQuest.MyoController</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

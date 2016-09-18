@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.Common", "MyoQuest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.MyoController.Tests", "MyoQuest.MyoController.Tests\MyoQuest.MyoController.Tests.csproj", "{FF4BB178-703B-44B7-97C5-52B612177B71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.Game", "MyoQuest.Game\MyoQuest.Game.csproj", "{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FF4BB178-703B-44B7-97C5-52B612177B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF4BB178-703B-44B7-97C5-52B612177B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF4BB178-703B-44B7-97C5-52B612177B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

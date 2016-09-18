@@ -2,7 +2,7 @@
 using MyoQuest.Common;
 using MyoQuest.Common.Enums;
 
-namespace MyoQuest.KeyboardController
+namespace MyoQuest.Game.KeyboardController
 {
 	public sealed class KeyboardControl : IGameController
 	{

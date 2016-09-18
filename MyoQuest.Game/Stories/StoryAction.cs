@@ -1,6 +1,6 @@
 ﻿using MyoQuest.Common.Enums;
 
-namespace MyoQuest.Stories
+namespace MyoQuest.Game.Stories
 {
 	/// <summary>
 	/// Essentially represents the <see cref="ControllerState"/> but is contextual to the game world.

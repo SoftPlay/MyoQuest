@@ -1,4 +1,4 @@
-﻿namespace MyoQuest.Stories
+﻿namespace MyoQuest.Game.Stories
 {
 	public interface IStory
 	{
