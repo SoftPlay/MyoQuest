@@ -62,6 +62,24 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyoQuest.Common\MyoQuest.Common.csproj">
+      <Project>{E25AD7ED-32A0-44FB-A091-DB41F63A2505}</Project>
+      <Name>MyoQuest.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyoQuest.Game.UnityModule\MyoQuest.Game.UnityModule.csproj">
+      <Project>{AF16ED0B-405A-4F1E-BD57-F0786CA7CF9E}</Project>
+      <Name>MyoQuest.Game.UnityModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyoQuest.MyoController.UnityModule\MyoQuest.MyoController.UnityModule.csproj">
+      <Project>{AF10FF98-06EF-418B-A7B6-7CAE314101BE}</Project>
+      <Name>MyoQuest.MyoController.UnityModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyoQuest.MyoController\MyoQuest.MyoController.csproj">
+      <Project>{C3004C21-326F-4DAC-B8D4-BB768D446F84}</Project>
+      <Name>MyoQuest.MyoController</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

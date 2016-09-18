@@ -54,9 +54,9 @@
       <Project>{E25AD7ED-32A0-44FB-A091-DB41F63A2505}</Project>
       <Name>MyoQuest.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyoQuest.MyoController\MyoQuest.MyoController.csproj">
-      <Project>{C3004C21-326F-4DAC-B8D4-BB768D446F84}</Project>
-      <Name>MyoQuest.MyoController</Name>
+    <ProjectReference Include="..\MyoQuest.UnityModule\MyoQuest.UnityModule.csproj">
+      <Project>{3E719007-4A22-41DC-8B55-75D4FC4C228A}</Project>
+      <Name>MyoQuest.UnityModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
