@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.MyoController.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.Game", "MyoQuest.Game\MyoQuest.Game.csproj", "{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.MyoController.UnityModule", "MyoQuest.MyoController.UnityModule\MyoQuest.MyoController.UnityModule.csproj", "{AF10FF98-06EF-418B-A7B6-7CAE314101BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.Game.UnityModule", "MyoQuest.Game.UnityModule\MyoQuest.Game.UnityModule.csproj", "{AF16ED0B-405A-4F1E-BD57-F0786CA7CF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyoQuest.UnityModule", "MyoQuest.UnityModule\MyoQuest.UnityModule.csproj", "{3E719007-4A22-41DC-8B55-75D4FC4C228A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +45,18 @@ Global
 		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A56A1D01-2D4D-47F4-8BC5-1C6170F85C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF10FF98-06EF-418B-A7B6-7CAE314101BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF10FF98-06EF-418B-A7B6-7CAE314101BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF10FF98-06EF-418B-A7B6-7CAE314101BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF10FF98-06EF-418B-A7B6-7CAE314101BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF16ED0B-405A-4F1E-BD57-F0786CA7CF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF16ED0B-405A-4F1E-BD57-F0786CA7CF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF16ED0B-405A-4F1E-BD57-F0786CA7CF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF16ED0B-405A-4F1E-BD57-F0786CA7CF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E719007-4A22-41DC-8B55-75D4FC4C228A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E719007-4A22-41DC-8B55-75D4FC4C228A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E719007-4A22-41DC-8B55-75D4FC4C228A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E719007-4A22-41DC-8B55-75D4FC4C228A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

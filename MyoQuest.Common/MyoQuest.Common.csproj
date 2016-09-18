@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Enums\ControllerState.cs" />
     <Compile Include="IGameController.cs" />
+    <Compile Include="IGameRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
